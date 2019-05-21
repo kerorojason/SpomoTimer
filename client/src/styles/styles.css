@@ -325,7 +325,9 @@ body {
 .login-page {
   width: 100%;
   bottom: 0;
-  text-align: center; }
+  text-align: center;
+  height: -webkit-calc(100vh - 110px);
+  position: relative; }
   .login-page__title {
     margin: 5px 0 20px 0;
     font-size: 20px; }
@@ -342,9 +344,13 @@ body {
       background-color: #ffa7c4;
       color: #282c34; }
   .login-page__img {
+    bottom: 0;
     margin: auto;
     display: block;
-    width: 500px; }
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
 
 .playLists {
   margin: auto; }
