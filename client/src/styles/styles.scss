@@ -213,6 +213,12 @@ body {
   width: 70%;
   justify-content: space-around;
   flex-wrap: wrap;
+  &__main-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
   &__main-title {
     text-decoration: none;
     text-align: center;
@@ -225,6 +231,9 @@ body {
     padding: 15px;
     border: $color_pink solid 1px;
     border-radius: 5px;
+    &--inactive {
+      pointer-events: none;
+    }
     &:hover {
       background-color: $color_pink;
       color: $color_dark;

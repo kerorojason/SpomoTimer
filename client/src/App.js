@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // import queryString from 'query-string';
 import { connect } from 'react-redux'; //let certain components able to call action-creaters as props
@@ -47,9 +47,10 @@ class App extends Component {
           <section style={{ width: '85%', margin: 'auto' }}>
             <Switch>
               <Route exact path='/timer' component={Timer} />
-              <Route exact path='/dashboard' component={DashBoard} />
+              <Redirect from='/DashBoard' to='/' />
               <Route exact path='/todo-list' component={TodoList} />
               <Route exact path='/play-list' component={PlayListsSection} />
+              <Route exact path='/' component={DashBoard} />
             </Switch>
           </section>
         );

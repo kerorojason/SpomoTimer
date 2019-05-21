@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactTooltip from 'react-tooltip';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -49,11 +50,27 @@ class DashBoard extends Component {
     } = this.props.timerState;
     return (
       <section className='dashboard'>
-        <Link to='/timer' className='dashboard__main-title'>
-          <i className='fas fa-play-circle' />
-          <br />
-          Start working !
-        </Link>
+        <div data-tip data-for='happyFace' className='dashboard__main-wrapper'>
+          <Link
+            to='/timer'
+            className={
+              workList && breakList
+                ? 'dashboard__main-title'
+                : 'dashboard__main-title dashboard__main-title--inactive'
+            }
+          >
+            <i className='fas fa-play-circle' />
+            <br />
+            Start working !
+          </Link>
+        </div>
+        {workList && breakList ? (
+          ''
+        ) : (
+          <ReactTooltip id='happyFace' place='right' type='dark' effect='float'>
+            <span>Please selecte playlist first :)</span>
+          </ReactTooltip>
+        )}
 
         <div className='select-section'>
           <div className='select'>

@@ -81,6 +81,18 @@ export const playPrev = () => async (dispatch, getState) => {
   });
 };
 
+export const pauseTimer = () => async (dispatch, getState) => {
+  await axios({
+    method: 'put',
+    url:
+      'https://api.spotify.com/v1/me/player/play?device_id=' +
+      getState().timerState.device,
+    headers: {
+      Authorization: 'Bearer ' + getState().auth.spotifyAccessToken
+    }
+  });
+};
+
 export const setWorkTime = workTime => ({
   type: 'SET_WORKTIME',
   payload: +workTime

@@ -442,6 +442,11 @@ body {
   width: 70%;
   justify-content: space-around;
   flex-wrap: wrap; }
+  .dashboard__main-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
   .dashboard__main-title {
     text-decoration: none;
     text-align: center;
@@ -454,6 +459,8 @@ body {
     padding: 15px;
     border: #ffa7c4 solid 1px;
     border-radius: 5px; }
+    .dashboard__main-title--inactive {
+      pointer-events: none; }
     .dashboard__main-title:hover {
       background-color: #ffa7c4;
       color: #282c34;
