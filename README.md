@@ -49,7 +49,7 @@ A web applicaiton integrated Spotify music player, todo list and pomodoro clock 
     - passport
     - mongoose
     - cookie-session
-## Rerks
+## Remarks
 - Spomo-Timer doesn't have Spotify Web Playback SDK, which means you have to play music with your own Spotify player (any device connected to Spotify).
 - Spomo-Timer server will not save your Spotify account and password, it will only receive your access token and refresh token.
 ## Todos
