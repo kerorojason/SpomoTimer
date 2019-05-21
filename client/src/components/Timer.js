@@ -13,7 +13,7 @@ class Timer extends Component {
     this.props.startTimer();
 
     // start counting down
-    this.setState({ timeLeft: this.props.timerState.workTime * 10 });
+    this.setState({ timeLeft: this.props.timerState.workTime * 60 });
     this.intervalId = setInterval(() => {
       if (this.state.timeLeft > 0) {
         this.setState(state => ({ ...state, timeLeft: state.timeLeft - 1 }));
@@ -46,7 +46,7 @@ class Timer extends Component {
     // reset timeleft
     this.setState(state => ({
       timeLeft:
-        this.props.timerState[state.working ? 'workTime' : 'breakTime'] * 10
+        this.props.timerState[state.working ? 'workTime' : 'breakTime'] * 60
     }));
 
     // restart counter
