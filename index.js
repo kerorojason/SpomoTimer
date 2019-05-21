@@ -23,9 +23,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', (req, res) => {
-  res.send('Hi there');
-});
 require('./routes/authRoutes')(app);
 require('./routes/todoRoutes')(app);
 if (process.env.NODE_ENV === 'production') {
