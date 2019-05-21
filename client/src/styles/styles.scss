@@ -1,0 +1,332 @@
+$color_black: #000000;
+$color_dark: #282c34;
+$color_pink: #ffa7c4;
+$color_gray: #d3d3d3;
+
+$color_gray_light: #e6e6e6;
+$color_gray_fade: rgba($color_gray, 0.3);
+$color_bg: rgba(254, 254, 254, 0.07);
+
+$color_work: #ff5416;
+$color_break: rgb(58, 216, 255);
+
+@import 'select';
+@import 'todo';
+
+body {
+  background-color: $color_dark;
+  color: $color_gray;
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.fa-plus {
+  // -webkit-text-stroke: 2px white;
+
+  font-size: 20px !important;
+  margin-right: 4px;
+}
+.header {
+  width: 90%;
+
+  display: flex;
+  align-content: center;
+  margin: 10px auto;
+  &__img {
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  &__title {
+    display: inline-block;
+  }
+  &__list {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+  }
+  &__item {
+    margin-right: 20px;
+    display: flex;
+    align-content: center;
+  }
+  &__link {
+    margin: auto;
+    text-decoration: none;
+    color: $color_gray_fade;
+    font-size: 22px;
+    &:hover {
+      cursor: pointer;
+      color: $color_pink;
+    }
+  }
+}
+.login-page {
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  &__title {
+    margin: 5px 0 20px 0;
+    font-size: 20px;
+  }
+  &__btn {
+    display: inline-block;
+    margin: 5px 0 10px 0;
+    font-size: 20px;
+    color: $color_pink;
+    text-decoration: none;
+    padding: 4px;
+    border: $color_pink solid 1px;
+    border-radius: 5px;
+    &:hover {
+      background-color: $color_pink;
+      color: $color_dark;
+    }
+  }
+  &__img {
+    margin: auto;
+    display: block;
+    width: 500px;
+  }
+}
+
+.playLists {
+  margin: auto;
+  &__nav {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    margin: 20px auto 20px auto;
+    color: $color_gray_fade;
+    list-style: none;
+    padding: 0;
+    &-item {
+      background: none;
+      border: none;
+      font-size: inherit;
+      color: inherit;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        // color: $color_gray;
+        color: $color_pink;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 15%;
+    position: relative;
+    backface-visibility: hidden;
+  }
+
+  &__img {
+    background-size: cover;
+    width: 100%;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    backface-visibility: hidden;
+
+    // make img div square
+    &::after {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+
+    &:hover {
+      // transform: scale(1.03);
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background-color: rgba($color_black, 0.65);
+      }
+      // filter: brightness(40%);
+      & * {
+        opacity: 100;
+      }
+    }
+  }
+  &__add {
+    opacity: 0;
+    position: absolute;
+    font-size: 22px;
+    backface-visibility: hidden;
+    &-icon {
+      font-size: 30px;
+    }
+    &--work {
+      left: 24%;
+      top: 28%;
+      &:hover {
+        color: $color_work;
+        transform: scale(1.05);
+      }
+    }
+    &--break {
+      left: 22%;
+      top: 57%;
+      &:hover {
+        color: $color_break;
+        transform: scale(1.05);
+      }
+    }
+  }
+  &__name {
+    margin: 5px 5px 20px 5px;
+    font-size: 15px;
+    font-weight: 400;
+    display: block; /* Fallback for non-webkit */
+    height: 15 * 1.4 * 2px; /* Fallback for non-webkit */
+    line-height: 1.4;
+    text-align: center;
+    overflow: hidden;
+  }
+}
+
+.dashboard {
+  display: flex;
+  margin: auto;
+  width: 70%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  &__main-title {
+    text-decoration: none;
+    text-align: center;
+    width: 85%;
+    background-color: transparent;
+    color: $color_pink;
+    font-size: 50px;
+    font-weight: 400;
+    margin: 15px;
+    padding: 15px;
+    border: $color_pink solid 1px;
+    border-radius: 5px;
+    &:hover {
+      background-color: $color_pink;
+      color: $color_dark;
+      cursor: pointer;
+    }
+  }
+  &__setter {
+    text-align: center;
+    width: 33%;
+    font-size: 20px;
+    &--work:hover {
+      color: $color-work;
+    }
+    &--break:hover {
+      color: $color-break;
+    }
+  }
+  &__title {
+    font-weight: 300;
+    margin: 10px 0 0 0;
+  }
+
+  &__btn {
+    font-size: inherit;
+    padding: 0;
+    border: none;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &__img {
+    display: block;
+    margin: 5px auto 0 auto;
+    width: 60%;
+  }
+  &__input {
+    font-size: inherit;
+    display: inline-block;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    width: 45px;
+    margin: 10px;
+  }
+}
+
+.timer {
+  text-align: center;
+  &__time {
+    font-size: 70px;
+    margin: 10px;
+  }
+  &__todo {
+    font-size: 30px;
+    margin: 10px;
+  }
+  &__img {
+    display: inline-block;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    transition: all 0.2s;
+    position: relative;
+    backface-visibility: hidden;
+    &:hover {
+      // transform: scale(1.03);
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background-color: rgba($color_black, 0.65);
+      }
+      // filter: brightness(40%);
+      & * {
+        opacity: 100;
+      }
+    }
+  }
+  &__control {
+    opacity: 0;
+    position: absolute;
+    font-size: 20px;
+    backface-visibility: hidden;
+    top: 50%;
+    font-size: 40px;
+
+    &--next {
+      left: 30%;
+      transform: translate(-50%, -50%);
+      &:hover {
+        cursor: pointer;
+        color: $color_pink;
+      }
+    }
+    &--prev {
+      left: 70%;
+      transform: translate(-50%, -50%);
+      &:hover {
+        cursor: pointer;
+        color: $color_pink;
+      }
+    }
+  }
+  &__playlist {
+    margin: 5px;
+  }
+}
