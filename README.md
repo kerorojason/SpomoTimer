@@ -1,6 +1,7 @@
 # Spomo-Timer
 A web applicaiton integrated Spotify music player, todo list and pomodoro clock all together.
 ## Demo Link
+https://spomo-timer.herokuapp.com/
 ## How to Use
 - Login page.
 ![](https://i.imgur.com/OEUZrxZ.png)
