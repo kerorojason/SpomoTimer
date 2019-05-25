@@ -1,4 +1,4 @@
-# Spomo-Timer
+# Spomo-Timer (Spotify Pomodoro)
 A web applicaiton integrated Spotify music player, todo list and pomodoro clock all together.
 ## Demo Link
 https://spomo-timer.herokuapp.com/
