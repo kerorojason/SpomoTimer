@@ -25,6 +25,6 @@
     "query-string": "^6.5.0"
   },
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.1"
   }
 }
